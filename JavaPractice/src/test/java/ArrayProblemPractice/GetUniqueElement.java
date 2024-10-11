@@ -1,11 +1,21 @@
 package ArrayProblemPractice;
 
-import java.io.*;
 import java.util.*;
 
 public class GetUniqueElement {
 
-    public static void getUniqueElement(int[] arr) {
+    public static void getUniqueElementUsingBruteForce(int[] arr) {
+        Arrays.sort(arr);
+
+        for (int i = 0; i <= arr.length; i += 2) {
+            if (arr[i] != arr[i + 1]) {
+                System.out.println("unique element: " + arr[i]);
+                return;
+            }
+        }
+    }
+
+    public static void getUniqueElementUsingXOR(int[] arr) {
 
         int res = arr[0];
 
@@ -55,9 +65,11 @@ public class GetUniqueElement {
 
     public static void main(String[] args) {
         int ar[] = { 3, 5, 4, 19, 5, 3, 4 };
+        // int ar[] = { 3, 3, 4, 4, 5, 5, 19 };
         int ar1[] = { 3, 5, 4, 19, 5, 3, 4, 23 };
-        getUniqueElement(ar);
-        getALlUniqueElements(ar1);
+        getUniqueElementUsingBruteForce(ar);
+        // getUniqueElementUsingXOR(ar);
+        // getALlUniqueElements(ar1);
 
     }
 
