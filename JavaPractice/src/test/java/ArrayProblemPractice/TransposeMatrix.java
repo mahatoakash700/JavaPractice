@@ -1,5 +1,6 @@
 package ArrayProblemPractice;
 
+//swapping rows to columns in a matrix. rows and col must be same
 public class TransposeMatrix {
 
     public static void print2DArray(int[][] arr) {
@@ -31,7 +32,7 @@ public class TransposeMatrix {
                 // cant use below code
                 // because as both arr[i][j] & arr[j][i] pointing to same position, the moment
                 // arr[i][j] will get the value after addition, arr[j][i] value also get same
-                // value as arr[i][j]
+                // value as arr[i][j], while will change the expected subtracted value
 
                 // arr[i][j] = arr[i][j] + arr[j][i];
                 // arr[j][i] = arr[i][j] - arr[j][i];
