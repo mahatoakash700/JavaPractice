@@ -113,5 +113,4 @@ public class RotateArray {
         rotateFromFirstInPlace(arr1, 5);
         rotateFromLastInPlace(arr2, 5);
     }
-
 }
