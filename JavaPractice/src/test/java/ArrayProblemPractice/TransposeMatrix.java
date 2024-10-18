@@ -3,15 +3,6 @@ package ArrayProblemPractice;
 //swapping rows to columns in a matrix. rows and col must be same
 public class TransposeMatrix {
 
-    public static void print2DArray(int[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[0].length; j++) {
-                System.out.print(arr[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-
     public static void printTransposeMatrix(int[][] arr) {
         int row = arr.length;
         int col = arr[0].length;
@@ -21,7 +12,7 @@ public class TransposeMatrix {
             return;
         }
         System.out.println("Before matrix transpose");
-        print2DArray(arr);
+        PrintArray.print2DArray(arr);
         for (int i = 0; i < col; i++) {
             for (int j = i; j < row; j++) {
 
@@ -41,7 +32,7 @@ public class TransposeMatrix {
         }
 
         System.out.println("After transpose of matrix");
-        print2DArray(arr);
+        PrintArray.print2DArray(arr);
 
     }
 

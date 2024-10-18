@@ -2,12 +2,6 @@ package ArrayProblemPractice;
 
 public class ReverseArray {
 
-    public static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-    }
-
     public static void reverseArrayUsingTwoPointers(int[] arr) {
         int size = arr.length;
         int left = 0, right = size - 1;
@@ -22,7 +16,7 @@ public class ReverseArray {
         }
 
         System.out.println("Reversed Array");
-        printArray(arr);
+        PrintArray.printArray(arr);
     }
 
     public static void reverseArrayWithoutUsingTwoPointers(int[] arr) {
@@ -35,7 +29,7 @@ public class ReverseArray {
         }
 
         System.out.println("Reversed Array");
-        printArray(arr);
+        PrintArray.printArray(arr);
     }
 
     public static void main(String[] args) {

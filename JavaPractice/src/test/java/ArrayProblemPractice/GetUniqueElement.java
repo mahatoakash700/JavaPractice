@@ -4,6 +4,7 @@ import java.util.*;
 
 public class GetUniqueElement {
 
+    // currently code is not working
     public static void getUniqueElementUsingBruteForce(int[] arr) {
         Arrays.sort(arr);
 
@@ -67,8 +68,8 @@ public class GetUniqueElement {
         int ar[] = { 3, 5, 4, 19, 5, 3, 4 };
         // int ar[] = { 3, 3, 4, 4, 5, 5, 19 };
         int ar1[] = { 3, 5, 4, 19, 5, 3, 4, 23 };
-        getUniqueElementUsingBruteForce(ar);
-        // getUniqueElementUsingXOR(ar);
+        // getUniqueElementUsingBruteForce(ar);
+        getUniqueElementUsingXOR(ar);
         // getALlUniqueElements(ar1);
 
     }

@@ -50,6 +50,7 @@ public class RotateArray {
         }
 
         System.out.println("rotated Array from 1st: " + Arrays.toString(temp));
+        sc.close();
 
     }
 
@@ -76,6 +77,7 @@ public class RotateArray {
         }
 
         System.out.println("rotated Array from last: " + Arrays.toString(temp));
+        sc.close();
 
     }
 
@@ -103,14 +105,62 @@ public class RotateArray {
 
     }
 
+    public static void transPoseMatrix(int[][] arr) {
+        int row = arr.length;
+        int col = arr[0].length;
+        for (int i = 0; i < col; i++) {
+            for (int j = i; j < row; j++) {
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
+            }
+        }
+
+        System.out.println("Tranposed matrix");
+        PrintArray.print2DArray(arr);
+    }
+
+    public static void reverseArray(int[] arr) {
+        int i = 0, j = arr.length - 1;
+
+        while (i < j) {
+            arr[i] = arr[i] + arr[j];
+            arr[j] = arr[i] - arr[j];
+            arr[i] = arr[i] - arr[j];
+
+            i++;
+            j--;
+        }
+        // System.out.println("Reversed matrix");
+        // PrintArray.printArray(arr);
+    }
+
+    public static void rotateArrayPerpendicular(int[][] arr) {
+        System.out.println("Input matrix");
+
+        PrintArray.print2DArray(arr);
+        transPoseMatrix(arr);
+
+        for (int i = 0; i < arr[0].length; i++) {
+            reverseArray(arr[i]);
+        }
+
+        System.out.println("Rotated Matrix");
+        PrintArray.print2DArray(arr);
+
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
         int[] arr1 = { 1, 2, 3, 4, 5, 6, 7 };
         int[] arr2 = { 1, 2, 3, 4, 5, 6, 7 };
+        int[][] arr3 = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
         // rotateArrayFromFirstByProvidingSteps(arr);
         // rotateArrayFromLastByProvidingSteps(arr);
 
-        rotateFromFirstInPlace(arr1, 5);
-        rotateFromLastInPlace(arr2, 5);
+        // rotateFromFirstInPlace(arr1, 5);
+        // rotateFromLastInPlace(arr2, 5);
+
+        rotateArrayPerpendicular(arr3);
     }
 }

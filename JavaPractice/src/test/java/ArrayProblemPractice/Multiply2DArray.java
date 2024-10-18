@@ -2,15 +2,6 @@ package ArrayProblemPractice;
 
 public class Multiply2DArray {
 
-    public static void print2DArray(int[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[0].length; j++) {
-                System.out.print(arr[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-
     public static void multiply2DArray(int[][] a, int[][] b) {
         int row1 = a.length;
         int col1 = a[0].length;
@@ -24,9 +15,9 @@ public class Multiply2DArray {
         }
 
         System.out.println("Matrix 1");
-        print2DArray(a);
+        PrintArray.print2DArray(a);
         System.out.println("Matrix 2");
-        print2DArray(b);
+        PrintArray.print2DArray(b);
 
         int[][] newArr = new int[row1][col2];
 
@@ -39,7 +30,7 @@ public class Multiply2DArray {
         }
 
         System.out.println("Multiplication of 2 matrix");
-        print2DArray(newArr);
+        PrintArray.print2DArray(newArr);
 
     }
 

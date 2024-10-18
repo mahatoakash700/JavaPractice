@@ -4,18 +4,12 @@ import java.util.Arrays;
 
 public class PrefixSum {
 
-    public static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-    }
-
     public static void getPrefixSum(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             arr[i] += arr[i - 1];
         }
         System.out.println("Prefix array");
-        printArray(arr);
+        PrintArray.printArray(arr);
         System.out.println();
     }
 
