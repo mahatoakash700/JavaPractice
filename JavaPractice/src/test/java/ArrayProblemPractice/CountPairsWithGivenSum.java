@@ -61,7 +61,7 @@ public class CountPairsWithGivenSum {
         int[] arr = { 1, 5, 7, -1, 5, 11, 17, -3 };
         // countPairsForGivenSum(arr, 6);
         countPairsForGivenSum(arr, 12);
-        countPairsForGivenTripleSum(arr, 13);
+        // countPairsForGivenTripleSum(arr, 13);
     }
 
 }

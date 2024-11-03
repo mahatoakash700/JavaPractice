@@ -1,5 +1,8 @@
 package ArrayProblemPractice;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class PrintArray {
 
     public static void printArray(int[] arr) {
@@ -18,6 +21,10 @@ public class PrintArray {
             }
             System.out.println();
         }
+    }
+
+    public static void printIntegerArrayList(ArrayList<Integer> list) {
+        System.out.println(Arrays.asList(list));
     }
 
     public static void main(String[] args) {
