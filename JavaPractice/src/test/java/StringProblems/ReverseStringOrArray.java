@@ -37,11 +37,12 @@ public class ReverseStringOrArray {
     public static void main(String[] args) {
         // isPalindrome("Was it a car or a cat I saw?");
         // isPalindrome("tab a cat");
-        isPalindromeUsingTwoPointer("Was it a car or a cat I saw?");
-        isPalindromeUsingTwoPointer("tab a cat");
-        isPalindromeUsingTwoPointer("A man, a plan, a canal: Panama");  
-        isPalindromeUsingTwoPointer("-121");  
-        isPalindromeUsingTwoPointer("-10");  
+        // isPalindromeUsingTwoPointer("Was it a car or a cat I saw?");
+        // isPalindromeUsingTwoPointer("tab a cat");
+        // isPalindromeUsingTwoPointer("A man, a plan, a canal: Panama");  
+        // isPalindromeUsingTwoPointer("-121");  
+        // isPalindromeUsingTwoPointer("-10");  
+        isPalindromeUsingTwoPointer("Madam, in Eden, I'm Adam");  
 
     }
 }
