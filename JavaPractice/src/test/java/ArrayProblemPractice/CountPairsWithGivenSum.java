@@ -3,8 +3,28 @@ package ArrayProblemPractice;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class CountPairsWithGivenSum {
+
+    public static void twoSumIndices(int[] arr, int target) {
+        Map<Integer, Integer> numMap = new HashMap<>();
+        Set<String> pairs = new HashSet<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            int diffNum = target - arr[i];
+
+            if (numMap.containsKey(diffNum)) {
+                String pair = Math.min(diffNum, arr[i]) + "," + Math.max(diffNum, arr[i])+"=>"+numMap.get(diffNum)+","+i;
+                System.out.println("pair: " + pair);
+                if (!pairs.contains(pair)) {
+                    pairs.add(pair);
+                }  
+            }
+            numMap.put(arr[i], i);
+        }
+    }
 
     public static void countPairsForGivenSum(int[] arr, int sum) {
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -60,8 +80,9 @@ public class CountPairsWithGivenSum {
     public static void main(String[] args) {
         int[] arr = { 1, 5, 7, -1, 5, 11, 17, -3 };
         // countPairsForGivenSum(arr, 6);
-        countPairsForGivenSum(arr, 12);
+        // countPairsForGivenSum(arr, 12);
         // countPairsForGivenTripleSum(arr, 13);
+        twoSumIndices(arr, 6);
     }
 
 }
