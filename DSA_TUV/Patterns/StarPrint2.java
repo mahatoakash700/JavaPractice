@@ -398,7 +398,7 @@ public class StarPrint2 {
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
-            for (int j = 1; j <= spaces; j++) {
+            for (int k = 1; k <= spaces; k++) {
                 System.out.print("-");
             }
             for (int j = 1; j <= i; j++) {
@@ -408,6 +408,102 @@ public class StarPrint2 {
             spaces -= 2;
         }
     }
+
+    public static void printStarPattern20(int n){
+        /*
+         *  *         *
+            * *     * *
+            * * * * * *
+            * *     * *
+            *         *
+         */
+        int space = 2*(n-1);
+        for(int i=1;i<=2*n-1;i++){
+            int stars = i;
+
+            if(i > n){
+                stars = 2*n-i;      
+            }
+            for(int j = 1;j<=stars;j++){
+                System.out.print("*");
+            }
+            for(int k=1;k<=space;k++){
+                System.out.print(" ");
+            }
+
+            for(int j = 1;j<=stars;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+            if(i<n){//always compare i<n, because if i>n is checked, then space issue will come
+                space -= 2;
+            }else{
+                space += 2;
+            }
+        }
+    }
+
+    public static void printStarPattern21(int n){
+        /*
+         *   *  
+            ***
+           ***** 
+          *******
+           *****
+            ***
+             *   
+         */
+         for(int i=1;i<=n;i++){
+            int space = n-i;
+            int stars = 2*i-1;
+            //space
+            for(int j=1;j<=space;j++){
+                System.out.print(" ");
+            }
+            //stars
+            for(int k =1;k<=stars;k++){
+                System.out.print("*");
+            }
+            //space
+            for(int j=1;j<=space;j++){
+                System.out.print(" ");
+            }
+            System.out.println();
+         }
+    }
+
+    public static void printStarPattern22(int n){
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(j==0||i==0||j==n-1||i==n-1){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printStarPattern23(int n){
+        for(int i=0;i<2*n-1;i++){
+            for(int j=0;j<2*n-1;j++){
+                int top = i;
+                int left = j;
+                int right = (2*n-1)-1-j;
+                int down = (2*n-1)-1-i;
+                // System.out.print(n-Math.min(Math.min(top,down),Math.min(left,right)));
+
+                int min1 = (top < down) ? top : down;
+                int min2 = (left < right) ? left : right;
+                int minFinal = (min1 < min2) ? min1 : min2;
+
+            System.out.print(n - minFinal);
+            }
+            System.out.println();
+        }
+    }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -432,5 +528,9 @@ public class StarPrint2 {
         // printStarPattern17(n);
         // printStarPattern18(n);
         printStarPattern19(n);
+        // printStarPattern20(n);
+        // printStarPattern21(n);
+        // printStarPattern22(n);
+        // printStarPattern23(n);
     }
 }
