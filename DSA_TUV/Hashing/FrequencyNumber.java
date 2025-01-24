@@ -1,7 +1,11 @@
 package Hashing;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class FrequencyNumber {
 
@@ -50,14 +54,44 @@ public class FrequencyNumber {
         return freqArray[input2];
     }
 
+    public static void frequencyCountIntMap() {
+        Map<Integer, Integer> mapList = new HashMap<>();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter array size");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println(Arrays.toString(arr));
+
+        for (int i = 0; i < arr.length; i++) {
+            mapList.put(arr[i], mapList.getOrDefault(arr[i], 0) + 1);
+        }
+
+        mapList.forEach((key, value) -> System.out.println(key + "-" + value));
+
+        int high = 0;
+        for(Map.Entry<Integer, Integer> entry : mapList.entrySet()){
+            if(entry.getValue() > high){
+                high = entry.getValue();
+            }
+        }
+        System.out.println("Highest frequency: " + high);
+    }
+
     public static void main(String[] args) {
         int[] arr = { 2, 3, 2, 3, 5 };
         String s = "aAghbhcah";
         // List<Integer> frequencies = frequencyCountInt(arr);
         // int frequencies = frequencyCountSmallChar(s,'b');
-        int frequencies = frequencyCountAllChar(s, 'A');
+        // int frequencies = frequencyCountAllChar(s, 'A');
+        // System.out.println("Frequencies: " + frequencies);
 
-        System.out.println("Frequencies: " + frequencies);
+        frequencyCountIntMap();
     }
 
 }
