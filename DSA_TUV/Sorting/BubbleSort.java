@@ -25,7 +25,7 @@ public class BubbleSort {
         System.out.println("input array...");
         System.out.println(Arrays.toString(arr));
 
-        for (int i = n - 1; i >= 1; i--) {
+        for (int i = n  - 1; i >= 1; i--) {
             for (int j = 0; j <= i - 1; j++) { // i-1 is used so that j will run till 2nd last element and 2nd last
                                                // element will be compared with last element
                 if (arr[j] > arr[j + 1]) {

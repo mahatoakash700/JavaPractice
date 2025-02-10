@@ -12,12 +12,23 @@ public class MergeSort {
         int mid = (left + right) / 2;
 
         if (low >= high) {
+            System.out.println("left: " + low);
+            System.out.println("right: " + high);
+            System.out.println("mid: " + mid);
+            System.out.println("==Returning==");
             return;
         }
         System.out.println("================");
         System.out.println("left: " + low);
-        System.out.println("mid: " + mid);
         System.out.println("right: " + high);
+        System.out.println("mid: " + mid);
+
+        
+        int[] arr1  = new int[mid+1];
+        for(int i=0;i<=mid;i++){
+            arr1[i] = arr[i];
+        }
+        System.out.println("Array: "+Arrays.toString(arr1));
 
         mergeSort(arr, left, mid);
 
@@ -43,8 +54,6 @@ public class MergeSort {
         System.out.println("right: " + right);
         System.out.println("high: " + high);
 
-        System.out.println("Arry:" + Arrays.toString(arr));
-
         while (left <= mid && right <= high) {
             if (arr[left] <= arr[right]) {
                 temp.add(arr[left]);
@@ -63,11 +72,11 @@ public class MergeSort {
             temp.add(arr[right]);
             right++;
         }
-        System.out.println("temp: " + temp);
+        System.out.println("temp Array: " + temp);
 
         for (int i = low; i <= high; i++) {
             arr[i] = temp.get(i - low); 
-            // if -low is removed, the arrayOutOfBounds as temp might not have values store
+            // if -low is removed, the arrayOutOfBounds as temp might not have values stored
             // till i
         }
         System.out.println(Arrays.toString(arr));
